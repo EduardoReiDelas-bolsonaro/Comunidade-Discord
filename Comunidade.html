@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidade do Discord - Site Unificado</title>
+    <style>
+        /* Estilos Globais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333333;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #FFA500;
+        }
+
+        header h1 {
+            color: #FFA500;
+        }
+
+        nav {
+            background-color: #1c1c1c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav button {
+            color: #FFFFFF;
+            background-color: #333333;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav button:hover {
+            background-color: #FFA500;
+        }
+
+        .container {
+            display: none;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .active {
+            display: block;
+        }
+
+        h2 {
+            color: #FFA500;
+            border-bottom: 2px solid #FFA500;
+            padding-bottom: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+            font-size: 16px;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            text-align: center;
+            padding: 20px;
+            border-top: 3px solid #FFA500;
+        }
+
+        /* Estilo da seção de Administradores */
+        .admin-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+        }
+
+        .admin-card {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #FFA500;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 165, 0, 0.5);
+        }
+
+        .admin-card img {
+            border-radius: 10px; /* Ajustado para cantos arredondados */
+            width: 150px; /* Largura da imagem aumentada */
+            height: 150px; /* Altura da imagem aumentada */
+            margin-bottom: 10px;
+            border: 2px solid #FFA500;
+        }
+
+        .admin-card h3 {
+            color: #FFA500;
+            margin-bottom: 10px;
+        }
+
+        .admin-card p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        /* Estilo da seção de Contato */
+        .formulario {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background-color: #222;
+            border-radius: 8px;
+            border: 2px solid #FFA500;
+        }
+
+        .formulario input, 
+        .formulario textarea {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #FFA500;
+            background-color: #333;
+            color: #FFF;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .formulario input:focus, 
+        .formulario textarea:focus {
+            border: 1px solid #FFA500;
+            outline: none;
+            background-color: #444;
+        }
+
+        .formulario button {
+            padding: 10px;
+            border: none;
+            background-color: #FFA500;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .formulario button:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Comunidade do Discord - Programação e Jogos</h1>
+    </header>
+
+    <nav>
+        <button onclick="showSection('home')">Início</button>
+        <button onclick="showSection('administradores')">Administradores</button>
+        <button onclick="showSection('contato')">Contato</button>
+    </nav>
+
+    <!-- Seção de Início -->
+    <div id="home" class="container active">
+        <h2>Bem-vindo à Comunidade</h2>
+        <p>Seja bem-vindo(a) à nossa comunidade do Discord! Somos um grupo focado em programação, hacking, jogos e criação de jogos. Nossa comunidade é um espaço onde você pode compartilhar conhecimento, aprender novas habilidades e conhecer outras pessoas com interesses semelhantes.</p>
+        
+        <h3>Principais Atividades e Objetivos:</h3>
+        <ul>
+            <li>💻 <strong>Programação:</strong> Organizamos regularmente sessões de estudo, webinars e workshops sobre as principais linguagens de programação, como Python, JavaScript, Java, C++, e muito mais. Não importa se você é um iniciante ou um programador experiente, há sempre algo para aprender!</li>
+            <li>🔐 <strong>Hacking Ético:</strong> Nossa comunidade incentiva o hacking ético e a cibersegurança. Temos grupos de estudo focados em ensinar práticas seguras, explorar vulnerabilidades de sistemas em ambientes controlados e compartilhar dicas sobre como proteger informações pessoais.</li>
+            <li>🎮 <strong>Jogos:</strong> Apaixonados por jogos? Nós também! Organizamos partidas online de vários jogos, incluindo títulos populares como League of Legends, CS:GO, Minecraft, e muitos outros. Além disso, temos discussões sobre táticas, estratégias e curiosidades sobre a indústria de jogos.</li>
+            <li>🛠️ <strong>Criação de Jogos:</strong> Para os entusiastas do desenvolvimento de jogos, nossa comunidade é o lugar perfeito para você. Oferecemos tutoriais, desafios mensais, e projetos colaborativos utilizando ferramentas como Unity, Unreal Engine, e Godot. Além disso, discutimos storytelling, design de níveis e criação de personagens.</li>
+            <li>📚 <strong>Recursos:</strong> Acesse uma variedade de e-books, tutoriais em vídeo e outros materiais que vão ajudar você a expandir suas habilidades em todas as áreas que oferecemos.</li>
+        </ul>
+        
+        <h3>Como Funciona a Comunidade:</h3>
+        <p>Ao se juntar a nós, você terá acesso a diversos canais de texto e voz no Discord, onde você pode interagir com outros membros. Oferecemos canais dedicados para perguntas, discussões e compartilhamento de projetos pessoais. Os membros mais ativos recebem recompensas, como cargos especiais e acesso a recursos exclusivos!</p>
+    </div>
+
+    <!-- Seção de Administradores -->
+    <div id="administradores" class="container">
+        <h2>Administradores</h2>
+        <div class="admin-container">
+            <div class="admin-card">
+                <img src="admin1.jpg" alt="Fundador da Staff">
+                <h3>Fundador da Staff</h3>
+            </div>
+            <div class="admin-card">
+                <img src="admin2.jpg" alt="Subfundador da Staff">
+                <h3>Subfundador da Staff</h3>
+            </div>
+            <div class="admin-card">
+                <img src="admin3.jpg" alt="Supervisor da Staff">
+                <h3>Supervisor da Staff</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção de Contato -->
+    <div id="contato" class="container">
+        <h2>Contato</h2>
+        <p>Se você tiver alguma dúvida ou quiser mais informações, sinta-se à vontade para entrar em contato conosco!</p>
+        <form class="formulario">
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <textarea rows="4" placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Comunidade do Discord - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.container');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
